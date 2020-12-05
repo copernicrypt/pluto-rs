@@ -13,7 +13,7 @@ A Remote Signing Server for Ethereum 2 Prysm Client ([See Prysm Documentation](h
 -   Compatible with the [Official Ethereum 2.0 CLI](https://github.com/ethereum/eth2.0-deposit-cli)
 
 ## Dependencies
-1.  [NodeJS](https://nodejs.org/)
+1.  [NodeJS >= 12.0.0](https://nodejs.org/)
 2.  [Prysm ETH2 Client](https://github.com/prysmaticlabs/prysm)
 
 ## Setup Guide (Ubuntu)
