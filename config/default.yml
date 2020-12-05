@@ -1,0 +1,9 @@
+# Default configuration file. Can be overridden with custom file.
+chain: "mainnet" # "mainnet" or "pyrmont"
+host: 0.0.0.0:50055 # The interface where the server is available
+wallet_dir: "~/pluto-rs/__mocks__/validator_keys" # path to validator key directory
+password_file: "~/pluto-rs/__mocks__/password.txt" # path to validator password file
+certificate_dir: "~/.ssl" # Path to directory containing all certifcates/keys
+tls_ca: "ca.cert" # Root Authority certificate filename
+tls_key: "server.key" # TLS Certificate Key filename
+tls_cert: "server.pem" # TLS CErtificate filename
