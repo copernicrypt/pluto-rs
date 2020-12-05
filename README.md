@@ -1,7 +1,7 @@
 # Pluto-RS
 ## Remote Signer for Prysm
 ![Release](https://img.shields.io/github/v/release/copernicrypt/pluto-rs?include_prereleases)
-![License](https://img.shields.io/github/license/copernicrypt/pluto-rs?style=flat) ![Unit Tests](https://github.com/copernicrypt/pluto-rs/workflows/Tests/badge.svg)
+![License](https://img.shields.io/github/license/copernicrypt/pluto-rs) ![Unit Tests](https://github.com/copernicrypt/pluto-rs/workflows/Tests/badge.svg)
 
 A Remote Signing Server for Ethereum 2 Prysm Client ([See Prysm Documentation](https://docs.prylabs.network/docs/wallet/remote))
 
