@@ -161,5 +161,17 @@ If you created a new `wallet-dir` for the remote server, make sure you specify i
 ./prysm validator --config-file=<PATH_TO_CONFIG>
 ```
 
+## Common Issues
+
+### FATAL accounts
+```shell
+Could not list accounts: could not list validator accounts with remote keymanager: could not fetch validating public keys: could not list accounts from remote server: rpc error: code = Unavailable desc = connection error: desc = "transport: authentication handshake failed: x509: certificate relies on legacy Common Name field, use SANs or temporarily enable Common Name matching with GODEBUG=x509ignoreCN=0"
+```
+**Problem:** Generating Certificates using a Common Name (CN), instead of the newer Subjective Alternative Name (SAN) breaks in `GO >= v1.15`.
+**Solution:** Prefix running your validator with `GODEBUG=x509ignoreCN=0`.
+```shell
+GODEBUG=x509ignoreCN=0 ./prysm.sh validator accounts list
+```
+
 ## Future Development
 -   Add Teku Compatibility

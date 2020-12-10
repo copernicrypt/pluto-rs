@@ -11,18 +11,10 @@ import "eth/v1/beacon_block.proto";
 // validator accounts and can sign respective messages.
 service RemoteSigner {
     // ListPublicKeysResponse managed by a remote signer.
-    rpc ListValidatingPublicKeys(Empty) returns (ListPublicKeysResponse) {
-        option (google.api.http) = {
-            get: "/accounts/v2/remote/accounts"
-        };
-    }
+    rpc ListValidatingPublicKeys(Empty) returns (ListPublicKeysResponse) {}
 
     // Sign a remote request via gRPC.
-    rpc Sign(SignRequest) returns (SignResponse) {
-        option (google.api.http) = {
-            post: "/accounts/v2/remote/sign"
-        };
-    }
+    rpc Sign(SignRequest) returns (SignResponse) {}
 }
 
 // ListPublicKeysResponse contains public keys
