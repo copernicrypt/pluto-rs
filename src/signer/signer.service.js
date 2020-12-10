@@ -15,7 +15,7 @@ const argv = require('minimist')(process.argv.slice(2));
 @Dependencies(HttpService)
 export class SignerService {
   constructor(httpService) {
-    const CONFIG_PATH = (!_.isNil(argv.config)) ? argv.config.replace(/^~/, os.homedir()) : resolve(__dirname, "../config/default.yml");
+    const CONFIG_PATH = (!_.isNil(argv.config)) ? argv.config.replace(/^~/, os.homedir()) : path.resolve(__dirname, "../../config/default.yml");
     this.config = yaml.safeLoad(fs.readFileSync(CONFIG_PATH, 'utf8'));
     this.httpService = httpService;
     // Testing Overrides
