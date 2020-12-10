@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import fs from 'fs';
 import path from 'path';
 import os from 'os';
@@ -8,11 +9,14 @@ import bls from 'bls-eth-wasm';
 import yaml from 'js-yaml';
 import * as types from '../../config/types';
 
+const argv = require('minimist')(process.argv.slice(2));
+
 @Injectable()
 @Dependencies(HttpService)
 export class SignerService {
   constructor(httpService) {
-    this.config = yaml.safeLoad(fs.readFileSync(path.resolve(__dirname, "../../config/default.yml"), 'utf8'));
+    const CONFIG_PATH = (!_.isNil(argv.config)) ? argv.config.replace(/^~/, os.homedir()) : resolve(__dirname, "../config/default.yml");
+    this.config = yaml.safeLoad(fs.readFileSync(CONFIG_PATH, 'utf8'));
     this.httpService = httpService;
     // Testing Overrides
     if(process.env.NODE_ENV === 'test') {

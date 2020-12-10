@@ -9,7 +9,6 @@ import yaml from 'js-yaml';
 import { SignerModule } from './signer/signer.module';
 
 const argv = require('minimist')(process.argv.slice(2));
-console.log(argv);
 
 const CONFIG_PATH = (!_.isNil(argv.config)) ? argv.config.replace(/^~/, os.homedir()) : resolve(__dirname, "../config/default.yml");
 const config = yaml.safeLoad(fs.readFileSync(CONFIG_PATH, 'utf8'));
